@@ -1,0 +1,48 @@
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(244, 243, 243);
+    text-decoration: wavy;
+    color: #FE4880;
+    box-shadow: 5px 10px 15px grey;
+}
+nav img{
+    height: 10vh;
+    float: left;
+   
+    }
+
+    p{
+        color: grey;
+        
+        
+    }
+ul{
+    display: inline-flex;
+    list-style: none;
+    
+    
+}
+
+li a{
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    color: #fe487fd8;
+    box-shadow: 5px 10px 15px grey;
+    border-radius: 0 20px;
+    margin: 10px;
+    transition: all 1s ease-in-out;
+}
+li a:hover{
+text-shadow: 5px 10px 15px #fe487f;
+box-shadow: 5px 5px 15px #fe487f;
+}
+
+h2{
+    padding: 10px 10px;
+    text-shadow: 5px 10px 15px #fe487fd8;
+    
+}
