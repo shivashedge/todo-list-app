@@ -8,43 +8,37 @@ import { Todo } from '../../model/Todo';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
-  inputTodo:string=""
+  inputTodo: string = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.todos = [
-      {
-        content: 'You Can Add To-do with Add To-do Button',
-        completed: false,
-      },
-      {
-        content: 'You Can Remove To-do with Remove Button ',
-        completed: false,
-      }
-    ];
+    this.todos = [];
+    let localTodo = localStorage.getItem('todos');
+    if (localTodo) {
+      this.todos = JSON.parse(localTodo);
+    }
   }
 
-  toggleDone(id:number) 
-  {
-    this.todos.map((v,i) => 
-    {
+  toggleDone(id: number) {
+    this.todos.map((v, i) => {
       if (i == id) v.completed = !v.completed;
       return v;
-    })
+    });
   }
-  deleteTodo(id:number){
-    this.todos = this.todos.filter((v,i) => {
+  deleteTodo(id: number) {
+    this.todos = this.todos.filter((v, i) => {
       return i !== id;
     });
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 
-  addTodo(){
+  addTodo() {
     this.todos.push({
       content: this.inputTodo,
-      completed: false
-      
+      completed: false,
     });
-    this.inputTodo = ""
+    this.inputTodo = '';
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
 }

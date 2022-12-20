@@ -1,5 +1,6 @@
 .todo {
 	display: flex;
+  align-items: center;
 	padding: 10px 15px;
 	background-color: #EEE;
 	border-bottom: 1px solid #DDD;
@@ -24,7 +25,7 @@
 .todo .content {
 	flex: 1 1 100%;
 	color: #6a2238;
-	
+
 }
 
 .todo.done .content {
@@ -40,16 +41,16 @@
 	border-radius: 50px 20px ;
 	background-color: #fe487f96;
 	box-shadow: 5px 10px 15px grey;
-	
+
 	font-size: 25px;
 	outline: none;
 	text-align: center;
 	color: #6a2238;
 }
 
-.todo-submit, 
+.todo-submit,
 .delete{
-	
+
 	width: 100%;
 	max-width: 200px;
 	appearance: none;
@@ -58,7 +59,7 @@
 	background: none;
 	border-radius: 0 20px ;
 	border: 1px solid pink;
-	
+
 	/* background-image: linear-gradient(#373737, #ff004c,#760000); */
 	background-image: linear-gradient( #e4a0b6,#fb1358,#6a2238);
 
@@ -67,19 +68,22 @@
 	font-weight: 700;
 	display: block;
 	font-size: 18px;
-	
+
 }
 
 
 .todo-submit{
 	margin: 15px auto;
-	
+
 }
 
-.todo-submit:hover, 
+.todo-submit:hover,
 .delete:hover {
 	background-image: linear-gradient(#fe487f94,white,#fe487f94);
 	color: #FE4880;
 	box-shadow: 5px 10px 15px black;
 }
 
+.empty{
+  text-align: center;
+}
