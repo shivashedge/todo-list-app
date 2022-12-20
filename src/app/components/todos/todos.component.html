@@ -1,15 +1,28 @@
 <div class="todos">
   <form (submit)="addTodo()">
-    <input type="text" name="inputTodo" placeholder="Enter Todo..." class="todo-input" [(ngModel)]="inputTodo">
+    <input
+      type="text"
+      name="inputTodo"
+      placeholder="Enter Todo..."
+      class="todo-input"
+      [(ngModel)]="inputTodo"
+    />
 
-    <input type="submit" value="Add Todo" class="todo-submit">
+    <input type="submit" value="Add Todo" class="todo-submit" />
   </form>
-<div *ngIf="this.todos.length===0; else elseBlock"><h2 class="empty"> Todo List is Empty !!! Add Todos in List</h2></div>
+  <div *ngIf="this.todos.length === 0; else elseBlock">
+    <h2 class="empty">Todo List is Empty !!! Add Todos in List</h2>
+  </div>
 
   <ng-template #elseBlock>
-    <div *ngFor="let todo of todos; let i = index" class="todo {{(todo.completed? 'done': '')}}">
-      <div class="id">{{i+1}})</div>
-      <div class="content" (click)="toggleDone(i)"><h2>{{todo.content}}</h2></div>
+    <div
+      *ngFor="let todo of todos; let i = index"
+      class="todo {{ todo.completed ? 'done' : '' }}"
+    >
+      <div class="id">{{ i + 1 }})</div>
+      <div class="content" (click)="toggleDone(i)">
+        <h2>{{ todo.content }}</h2>
+      </div>
       <button class="delete" (click)="deleteTodo(i)">Remove</button>
     </div>
   </ng-template>
